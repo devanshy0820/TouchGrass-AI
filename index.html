@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b15">
+  <title>TouchGrass AI | Find Your Outside</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#" class="logo"><span>✳</span> touchgrass<span class="ai">.ai</span></a>
+    <div class="nav-right">
+      <span class="status"><i id="statusDot"></i><span id="statusText">AI not loaded</span></span>
+      <button id="loadAI" class="small-btn">Load AI ↗</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="pill"><span>✦</span> YOUR DAILY DOSE OF OUTSIDE</div>
+        <h1>Your world is<br>waiting <span>outside.</span></h1>
+        <p>Trade endless scrolling for little adventures. Let open-source AI find something worth stepping outside for.</p>
+        <a href="#create" class="primary-btn hero-btn">Find my adventure <span>↗</span></a>
+        <div class="hero-note">NO PRESSURE. JUST FRESH AIR. 🌱</div>
+      </div>
+
+      <div class="landscape">
+        <div class="sun"></div>
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="mountain m1"></div>
+        <div class="mountain m2"></div>
+        <div class="mountain m3"></div>
+        <div class="land-label">TAKE THE<br>SCENIC ROUTE <span>↗</span></div>
+        <div class="plant plant1">✳</div>
+        <div class="plant plant2">✿</div>
+        <div class="plant plant3">✳</div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><span>⚡</span><div><small>TOTAL XP</small><strong id="xp">0</strong></div></div>
+      <div class="stat"><span>🌿</span><div><small>QUESTS DONE</small><strong id="done">0</strong></div></div>
+      <div class="stat"><span>🔥</span><div><small>DAY STREAK</small><strong id="streak">0</strong></div></div>
+    </section>
+
+    <section id="create" class="panel">
+      <div class="section-top">
+        <div><span class="overline">01 — PERSONALIZE</span><h2>What's the vibe?</h2></div>
+        <span class="decor">✳</span>
+      </div>
+
+      <label class="label">PICK YOUR MOOD</label>
+      <div class="options" id="moods">
+        <button class="option active" data-value="Chill">😌 Chill</button>
+        <button class="option" data-value="Adventurous">🧭 Adventure</button>
+        <button class="option" data-value="Curious">🔎 Curious</button>
+        <button class="option" data-value="Energetic">⚡ Energy</button>
+      </div>
+
+      <label class="label">CHOOSE YOUR THING</label>
+      <div class="options activities" id="activities">
+        <button class="option active" data-value="Nature exploration">🌳 Nature</button>
+        <button class="option" data-value="Walking">🚶 Walking</button>
+        <button class="option" data-value="Photography">📸 Photos</button>
+        <button class="option" data-value="Bird watching">🐦 Birding</button>
+        <button class="option" data-value="Mindfulness">🧘 Mindfulness</button>
+        <button class="option" data-value="Gardening">🌻 Gardening</button>
+      </div>
+
+      <label class="label">YOUR FREE TIME</label>
+      <div class="options" id="times">
+        <button class="option active" data-value="10">10 min</button>
+        <button class="option" data-value="20">20 min</button>
+        <button class="option" data-value="30">30 min</button>
+        <button class="option" data-value="60">1 hour</button>
+      </div>
+
+      <button id="generate" class="primary-btn generate">✦ Generate my quest <span>↗</span></button>
+      <p class="privacy">🔒 Designed for local AI inference. No AI API key needed.</p>
+    </section>
+
+    <section id="questArea" class="panel quest-area hidden">
+      <div class="section-top">
+        <div><span class="overline">02 — STEP INTO THE WORLD</span><h2>Your mini adventure</h2></div>
+        <span class="xp-badge">+50 XP</span>
+      </div>
+
+      <div class="quest-card">
+        <div class="quest-meta"><span id="category" class="tag">NATURE QUEST</span><span id="duration">◷ 10 MIN</span></div>
+        <h3 id="questTitle">Find your little patch of green.</h3>
+        <p id="questDescription"></p>
+        <div class="label">THE MISSION</div>
+        <div id="steps"></div>
+
+        <div class="timer">
+          <div><span class="overline">PHONE DOWN. EYES UP.</span><strong id="clock">10:00</strong><p id="timerText">Your outside time starts here.</p></div>
+          <button id="timerButton" class="small-btn">Start timer ▶</button>
+        </div>
+
+        <label for="note" class="label">FIELD NOTES (OPTIONAL)</label>
+        <textarea id="note" maxlength="500" placeholder="What did you notice, hear, or discover?"></textarea>
+        <button id="complete" class="primary-btn complete">✓ I completed my adventure</button>
+      </div>
+    </section>
+
+    <section class="journal">
+      <div class="section-top">
+        <div><span class="overline">03 — LITTLE WINS</span><h2>Your outside diary.</h2></div>
+        <span class="decor">📓</span>
+      </div>
+      <div id="history" class="history">
+        <div class="empty">🍃<p>Your adventures will appear here.</p></div>
+      </div>
+    </section>
+
+    <section class="bottom-banner">
+      <div class="banner-icon">🌎</div>
+      <div><h3>Life's happening out there.</h3><p>Close the tab. Open the door. Find your outside.</p></div>
+    </section>
+  </main>
+
+  <footer><a href="#" class="logo">✳ touchgrass<span class="ai">.ai</span></a><span>OPEN AI. OPEN AIR. OPEN WORLD.</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
